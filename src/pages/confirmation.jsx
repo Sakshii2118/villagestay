@@ -65,8 +65,8 @@ const BookingConfirmation = () => {
         <div className="mt-6 flex flex-col sm:flex-row justify-between gap-4">
           <button
             type="button"
-            onClick={() => window.location.href = '/edit-booking'}
-            className="px-6 py-2 bg-gray-300 text-gray-800 rounded hover:bg-gray-400"
+            onClick={() => window.location.href = '/booking'}
+            className="px-6 py-2 cursor-pointer bg-gray-300 text-gray-800 rounded hover:bg-gray-400"
           >
             Edit Booking
           </button>

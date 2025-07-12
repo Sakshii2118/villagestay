@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import aboutBg from '../assets/about-bg.jpg'; // Ensure this image is in src/assets
+import Navbar from '../components/Navbar';
 
 const AboutUs = () => {
   return (
@@ -8,14 +9,8 @@ const AboutUs = () => {
       className="min-h-screen bg-cover bg-center bg-no-repeat font-serif text-black flex flex-col"
       style={{ backgroundImage: `url(${aboutBg})` }}
     >
-      {/* Navbar */}
-      <nav className="bg-white bg-opacity-80 px-8 py-4 flex justify-between items-center shadow-md">
-        <div className="text-2xl font-bold text-green-800">VillageStay</div>
-        <div className="space-x-4 text-green-900 font-semibold">
-          <Link to="/" className="hover:underline">Home</Link>
-          <Link to="/about-us" className="hover:underline">About Us</Link>
-        </div>
-      </nav>
+      
+      <Navbar/>
 
       {/* Content */}
       <div className="flex-1 flex items-center justify-center px-6 text-center">
