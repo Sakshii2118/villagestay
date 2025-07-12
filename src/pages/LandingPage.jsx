@@ -31,45 +31,47 @@ const LandingPage = () => {
 
     return () => observer.disconnect();
   }, []);
-
-  const heroImages = [
+  
+const heroImages = [
+    'https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
     'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-    'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-    'https://images.unsplash.com/photo-1524492412937-b28074a5d7da?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80'
+    'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80'
   ];
+
 
   const villages = [
     {
       id: 1,
-      name: "Himalayan Hamlet",
-      location: "Himachal Pradesh",
+      name: "Majuli Island",
+      location: "Assam - Northeast India",
       rating: 4.9,
-      image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
-      price: "₹2,999",
-      description: "Pristine meadows, pine forests, and spiritual retreats in the lap of snow-capped peaks.",
-      features: ["Mountain Views", "Meditation", "Trekking", "Local Cuisine"]
+      image: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+      price: "₹2,199",
+      description: "World's largest river island with Neo-Vaishnavite monasteries, Mishing tribal villages, and riverine landscapes along the Brahmaputra.",
+      features: ["Tribal Homestays", "Mask Making", "Boat Fishing", "Satra Prayers"]
     },
     {
       id: 2,
-      name: "Kerala Backwater Bliss",
-      location: "Kerala",
+      name: "Kinnaur Valley",
+      location: "Himachal Pradesh - Western Himalayas",
       rating: 4.8,
-      image: "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
-      price: "₹3,499",
-      description: "Float through serene backwaters surrounded by coconut palms and ancient ayurvedic wisdom.",
-      features: ["Houseboat", "Ayurveda", "Backwaters", "Cultural Shows"]
+      image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+      price: "₹2,799",
+      description: "Silent Himalayan hamlet with Hindu-Buddhist culture, apple orchards, rustic wooden houses, and traditional wool weaving.",
+      features: ["Orchard Stays", "Yak Herding", "Wool Weaving", "Temple Treks"]
     },
     {
       id: 3,
-      name: "TajMahal Heritage Stay",
-      location: "Khair, Agra",
-      rating: 4.9,
-      image: "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
-      price: "₹2,799",
-      description: "Experience royal desert life with traditional havelis, camel rides, and starlit nights.",
-      features: ["Desert Safari", "Heritage", "Folk Music", "Camel Rides"]
+      name: "Banavasi",
+      location: "Karnataka - Western Ghats",
+      rating: 4.7,
+      image: "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+      price: "₹1,899",
+      description: "India's oldest living town with 2,500-year-old Kadamba temple ruins, paddy fields, and slow-living traditions.",
+      features: ["Agri Families", "Paddy Farming", "Folk Dance", "Temple Art"]
     }
   ];
+
 
   const stats = [
     { number: "500+", label: "Villages", icon: MapPin },
@@ -80,8 +82,8 @@ const LandingPage = () => {
 
   return (
     <div className="bg-white text-gray-900 font-sans overflow-hidden">
-    
-     {/* Navigation */}
+
+      {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200/50 transition-all duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
@@ -98,11 +100,11 @@ const LandingPage = () => {
               <a href="#destinations" className="text-gray-700 hover:text-emerald-600 transition-colors">Destinations</a>
               <a href="#about" className="text-gray-700 hover:text-emerald-600 transition-colors">About</a>
               <Link
-  to="/login"
-  className="bg-emerald-600 cursor-pointer text-white px-6 py-2 rounded-full hover:bg-emerald-700 transition-all duration-300 hover:scale-105"
->
-  Sign in
-</Link>
+                to="/login"
+                className="bg-emerald-600 cursor-pointer text-white px-6 py-2 rounded-full hover:bg-emerald-700 transition-all duration-300 hover:scale-105"
+              >
+                Sign in
+              </Link>
             </div>
           </div>
         </div>
@@ -111,7 +113,7 @@ const LandingPage = () => {
       <section id="home" className="relative h-screen flex items-center justify-center overflow-hidden">
         {/* Background with parallax */}
         <div className="absolute inset-0">
-          <div 
+          <div
             className="absolute inset-0 bg-gradient-to-r from-emerald-900/60 via-teal-900/40 to-emerald-900/60 z-10"
             style={{
               transform: `translateY(${scrollY * 0.5}px)`
@@ -177,9 +179,8 @@ const LandingPage = () => {
                 key={index}
                 data-animate
                 id={`stat-${index}`}
-                className={`text-center transform transition-all duration-700 ${
-                  isVisible[`stat-${index}`] ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
-                }`}
+                className={`text-center transform transition-all duration-700 ${isVisible[`stat-${index}`] ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+                  }`}
                 style={{ transitionDelay: `${index * 100}ms` }}
               >
                 <div className="inline-flex items-center justify-center w-16 h-16 bg-emerald-100 rounded-full mb-4">
@@ -211,9 +212,8 @@ const LandingPage = () => {
                 key={village.id}
                 data-animate
                 id={`village-${index}`}
-                className={`group bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 ${
-                  isVisible[`village-${index}`] ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
-                }`}
+                className={`group bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 ${isVisible[`village-${index}`] ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+                  }`}
                 style={{ transitionDelay: `${index * 150}ms` }}
               >
                 <div className="relative overflow-hidden">
@@ -230,7 +230,7 @@ const LandingPage = () => {
                     <span className="text-sm font-semibold">{village.rating}</span>
                   </div>
                 </div>
-                
+
                 <div className="p-6">
                   <div className="flex items-center gap-2 mb-2">
                     <MapPin className="w-4 h-4 text-emerald-600" />
@@ -238,7 +238,7 @@ const LandingPage = () => {
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-3">{village.name}</h3>
                   <p className="text-gray-600 mb-4 line-clamp-3">{village.description}</p>
-                  
+
                   <div className="flex flex-wrap gap-2 mb-4">
                     {village.features.map((feature, idx) => (
                       <span
@@ -249,7 +249,7 @@ const LandingPage = () => {
                       </span>
                     ))}
                   </div>
-                  
+
                   <button className="w-full bg-emerald-600 text-white py-3 rounded-xl font-semibold hover:bg-emerald-700 transition-colors duration-300 flex items-center justify-center gap-2 group">
                     Book Now
                     <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -268,9 +268,8 @@ const LandingPage = () => {
             <div
               data-animate
               id="about-content"
-              className={`transform transition-all duration-700 ${
-                isVisible['about-content'] ? 'translate-x-0 opacity-100' : '-translate-x-10 opacity-0'
-              }`}
+              className={`transform transition-all duration-700 ${isVisible['about-content'] ? 'translate-x-0 opacity-100' : '-translate-x-10 opacity-0'
+                }`}
             >
               <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
                 Connecting Hearts, Preserving Heritage
@@ -294,15 +293,14 @@ const LandingPage = () => {
                 ))}
               </div>
             </div>
-            
+
             <div
               data-animate
               id="about-image"
-              className={`transform transition-all duration-700 ${
-                isVisible['about-image'] ? 'translate-x-0 opacity-100' : 'translate-x-10 opacity-0'
-              }`}
+              className={`transform transition-all duration-700 ${isVisible['about-image'] ? 'translate-x-0 opacity-100' : 'translate-x-10 opacity-0'
+                }`}
             >
-              <div className="relative">
+                 <div className="relative">
                 <img
                   src="https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
                   alt="Rural community"
@@ -346,7 +344,7 @@ const LandingPage = () => {
                 Connecting travelers with authentic rural experiences across India.
               </p>
             </div>
-            
+
             <div>
               <h4 className="font-semibold mb-4">Quick Links</h4>
               <ul className="space-y-2 text-gray-400">
@@ -356,7 +354,7 @@ const LandingPage = () => {
                 <li><a href="#" className="hover:text-emerald-400 transition-colors">Contact</a></li>
               </ul>
             </div>
-            
+
             <div>
               <h4 className="font-semibold mb-4">Support</h4>
               <ul className="space-y-2 text-gray-400">
@@ -366,7 +364,7 @@ const LandingPage = () => {
                 <li><a href="#" className="hover:text-emerald-400 transition-colors">Booking Policy</a></li>
               </ul>
             </div>
-            
+
             <div>
               <h4 className="font-semibold mb-4">Connect</h4>
               <ul className="space-y-2 text-gray-400">
@@ -377,7 +375,7 @@ const LandingPage = () => {
               </ul>
             </div>
           </div>
-          
+
           <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
             <p>&copy; 2025 VillageStay. All rights reserved.</p>
           </div>
