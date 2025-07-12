@@ -106,11 +106,20 @@ const SignupPage = () => {
 
             <button
               type="submit"
-              className="w-full bg-green-600 text-white py-2 rounded hover:bg-green-700"
+              className="w-full bg-green-600 cursor-pointer text-white py-2 rounded hover:bg-green-700"
             >
               Create Account
             </button>
           </form>
+                <div className="mt-6 text-center">
+            <span className="text-gray-600">Already have an account? </span>
+            <a
+              href="/login"
+              className="text-green-700 cursor-pointer font-semibold hover:underline transition-colors duration-200"
+            >
+              Sign in here
+            </a>
+          </div>
         </div>
       </div>
     </div>

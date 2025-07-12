@@ -1,1 +1,12 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Rubik+Iso&display=swap');
+
+/* Set Lato as the default font for the whole site */
+body {
+  font-family: 'Lato', Arial, sans-serif;
+}
+
+/* Example: Use Rubik Iso for headings */
+h1, h2, h3 {
+  font-family: 'Rubik Iso', cursive;
+}

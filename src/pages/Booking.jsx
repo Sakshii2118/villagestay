@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
-import React from 'react';
 import Navbar from '../components/Navbar';
+import { useNavigate } from 'react-router-dom';
 
 const EditBooking = () => {
+
+  const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
     name: '',
@@ -28,29 +30,53 @@ const EditBooking = () => {
     }
   };
 
+  const [tourists, setTourists] = useState(['']);
+
+  const handleTouristChange = (index, value) => {
+    const updated = [...tourists];
+    updated[index] = value;
+    setTourists(updated);
+  };
+
+  const addTourist = () => {
+    setTourists([...tourists, '']);
+  };
+
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const params = new URLSearchParams({
       ...formData,
       activities: formData.activities,
     });
-    window.location.href = `/booking-confirmation?${params.toString()}`;
+    navigate("/confirmation")
   };
 
   return (
-    <div className="bg-gray-100 font-sans min-h-screen py-10"><Navbar/>
+    <div className="bg-gray-100 font-sans min-h-screen"><Navbar/>
       <div className="max-w-3xl mx-auto p-6 bg-white rounded-lg shadow-md">
-        <h2 className="text-2xl font-bold text-blue-800 mb-6">Edit Your Booking</h2>
+        <h2 className="text-2xl font-bold cursor-pointer text-blue-800 mb-6">Confirm Your Booking</h2>
         <form onSubmit={handleSubmit} className="space-y-4">
-          <div>
-            <label className="block font-semibold text-gray-700">Name</label>
-            <input
-              type="text"
-              name="name"
-              required
-              onChange={handleChange}
-              className="w-full border border-gray-300 rounded px-4 py-2 mt-1"
-            />
+       <div>
+            <label className="block font-semibold mb-2 text-green-700">Tourist Names</label>
+            {tourists.map((name, idx) => (
+              <input
+                key={idx}
+                type="text"
+                value={name}
+                onChange={e => handleTouristChange(idx, e.target.value)}
+                placeholder={`Tourist ${idx + 1} Name`}
+                className="w-full border border-gray-300 rounded px-4 py-2 mb-2"
+                required
+              />
+            ))}
+            <button
+              type="button"
+              onClick={addTourist}
+              className="bg-green-600 cursor-pointer text-white px-4 py-1 rounded-full shadow hover:bg-green-700 transition-all duration-300 font-semibold mt-2"
+            >
+              Add Tourist
+            </button>
           </div>
 
           <div>
@@ -58,17 +84,6 @@ const EditBooking = () => {
             <input
               type="email"
               name="email"
-              required
-              onChange={handleChange}
-              className="w-full border border-gray-300 rounded px-4 py-2 mt-1"
-            />
-          </div>
-
-          <div>
-            <label className="block font-semibold text-gray-700">Place You Want to Visit</label>
-            <input
-              type="text"
-              name="destination"
               required
               onChange={handleChange}
               className="w-full border border-gray-300 rounded px-4 py-2 mt-1"
@@ -141,7 +156,7 @@ const EditBooking = () => {
           <div className="pt-4">
             <button
               type="submit"
-              className="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700"
+              className="bg-blue-600 cursor-pointer text-white px-6 py-2 rounded hover:bg-blue-700"
             >
               Confirm Booking
             </button>

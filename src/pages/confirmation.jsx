@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react';
-import React from 'react';
+import { useEffect, useState } from 'react';
 import Navbar from '../components/Navbar';
 
 const BookingConfirmation = () => {
@@ -73,7 +72,7 @@ const BookingConfirmation = () => {
           </button>
           <button
             onClick={initiatePayment}
-            className="px-6 py-2 bg-green-600 text-white rounded hover:bg-green-700"
+            className="px-6 py-2 cursor-pointer bg-green-600 text-white rounded hover:bg-green-700"
           >
             Confirm & Pay
           </button>

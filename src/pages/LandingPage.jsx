@@ -29,7 +29,7 @@ const LandingPage = () => {
           </p>
           <div className="mt-8">
             <Link
-              to="/"
+              to="/login"
               className="bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 shadow-md"
             >
               Get Started
